@@ -8,7 +8,14 @@ public abstract class Conteudo {
     private String titulo;
     private String descricao;
 
+    private Professor professorAlocado;
+
     public abstract double calcularXp();
+
+    public void alocarProfessor(Professor professor) {
+        this.professorAlocado = professor;
+        professor.getAlocacoesEmConteudos().add(this);
+    }
 
 
 }
